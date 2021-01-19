@@ -8,4 +8,10 @@ import java.util.List;
 @Mapper
 public interface BookMapper {
     List<Book> findAll();
+
+    Book findById(int id);
+
+    int getMaxId();
+
+    void insertBook(int id, String name, String authorName);
 }
