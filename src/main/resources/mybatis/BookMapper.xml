@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- Some general section ended -->
+
+
+
+<!-- Link the mapper classes from here onwards -->
+<mapper namespace="com.example.xmlbasedmybatis.dao.BookMapper">
+    <resultMap id="baseResultMap" type="com.example.xmlbasedmybatis.domain.Book">
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="authorName" property="authorName" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="findAll" resultMap="baseResultMap">
+        select * from books
+    </select>
+
+</mapper>
